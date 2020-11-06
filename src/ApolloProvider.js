@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache,ApolloProvider as ApolloContainer, createHt
 import { setContext } from '@apollo/client/link/context'
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:4000/graphql',
+    uri: 'https://salty-tor-95124.herokuapp.com/',
   });
 
 const authLink = setContext((_, { headers }) => {
