@@ -1,0 +1,84 @@
+.task-form{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.task-form button{
+    width: 100px;
+    padding: 6px 0;
+    font-size: 1.2rem;
+    border-radius: var(--borderRadius);
+    cursor: pointer;
+    background-color: #fff;
+    border:3px solid var(--lightBlue);
+    display: block;
+    margin-left: auto;
+}
+.task-form button:active{
+    border:3px solid var(--primaryColor);
+    transform: scale(.9);
+    transition: .2s;
+}
+.task-form button:hover{
+    border:3px solid var(--primaryColor);
+}
+.task__input__box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.task__input__box label{
+    font-size: 1.5rem;
+}
+.task__input__box input{
+    font-size: 1.2rem;
+    justify-self: end;
+    width: 70%;
+    min-width: 125px;
+    border-radius: var(--borderRadius);
+    border:3px solid var(--lightBlue);
+    padding: 5px 10px;
+}
+.task__input__box input:focus{
+    border:3px solid var(--primaryColor);
+}
+
+.task{
+    display: grid;
+    width: 60%;
+    margin: auto;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.spinner{
+    background: linear-gradient(white 60%,var(--primaryColor));
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: spinner 1s;
+    margin: auto;
+    position: relative;
+}
+.spinner::after{
+    content: '';
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    left: calc(50% - 35px);
+    top: calc(50% - 35px);
+}
+
+@keyframes spinner {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

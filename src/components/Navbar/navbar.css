@@ -1,0 +1,47 @@
+nav{
+    display: flex;
+    height: 55px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--primaryColor);
+}
+nav ul{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav__brand{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.link{
+    color: white;
+    font-size: 1.3rem;
+    position: relative;
+}
+.link::before{
+    content: ' ';
+    display: block;
+    height: 3px;
+    top: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: linear .2s;
+}
+.link.active::before{
+    transform: scaleX(100%);
+}
+.link:hover::before{
+    transform: scaleX(100%);
+}
+button.button__link{
+    all: unset;
+    border: none;
+    background:none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+}

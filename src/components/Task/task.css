@@ -1,0 +1,39 @@
+.task{
+    padding: 0 20px;
+    border-radius: var(--borderRadius);
+}
+
+.task.closed{
+    background-color: rgba(150, 148, 148, 0.336);
+    opacity: .6;
+}
+
+.task p {
+    text-transform: capitalize;
+}
+
+.status__box{
+    display: flex;
+    justify-content: start;
+}
+.status__box .status-icon{
+    margin: 0 5px;
+    cursor: pointer;
+}
+.chooseStatus{
+    opacity: 0;
+    transition: .5s;
+}
+.chooseStatus.active{
+    opacity: 1;
+    transition: .5s;
+}
+.delete__icon{
+    color: tomato;
+    cursor: pointer;
+    transition: .25;
+}
+.delete__icon:active{
+    transform: scale(.9);
+    transition: .25;
+}
