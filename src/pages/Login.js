@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { useUserContext } from '../userContext'
 
+import { client } from '../ApolloProvider'
+
+
 
 const LOGIN = gql`
     query login($email:String!,$password:String!){
@@ -28,7 +31,7 @@ export default function Login(props) {
         onCompleted(result){
             localStorage.setItem('token', result.login.token)
             setUser({ email:result.login.email, id:result.login.id })
-            window.location.href = '/'
+            props.history.push('/')
         },
         onError(err){
             setError(err.graphQLErrors[0]?.extensions.exception.error)
@@ -48,6 +51,7 @@ export default function Login(props) {
     }
 
     useEffect(() => {
+        client.resetStore()
         if(user){
             props.history.push('/')
         }

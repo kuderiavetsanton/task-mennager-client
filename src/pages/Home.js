@@ -7,6 +7,8 @@ import { gql, useMutation, useQuery } from '@apollo/client'
 import './home.css'
 import Task from '../components/Task/Task'
 
+import { client } from '../ApolloProvider'
+
 const ADD_TASK = gql`
     mutation addTask($title:String!,$description:String!){
         addTask(title:$title,description:$description){
@@ -64,6 +66,7 @@ export default function Home(props) {
     })
 
     useEffect(() => {
+        client.resetStore()
         if(!user){
             props.history.push('/login')
         }

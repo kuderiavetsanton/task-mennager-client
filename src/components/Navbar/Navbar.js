@@ -1,16 +1,17 @@
 import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import './navbar.css'
 
 import { useUserContext } from '../../userContext'
 
-export default function Navbar() {
+
+function Navbar(props) {
     const [ user,setUser ] = useUserContext()
 
     const handleLogout = () => {
         localStorage.removeItem('token')
         setUser(null)
-        window.location.href = '/login'
+        props.history.push('/login')
     }
 
     return (
@@ -28,3 +29,6 @@ export default function Navbar() {
         </nav>
     )
 }
+
+
+export default withRouter(Navbar)
