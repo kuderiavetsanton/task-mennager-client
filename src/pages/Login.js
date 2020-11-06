@@ -28,7 +28,7 @@ export default function Login(props) {
         onCompleted(result){
             localStorage.setItem('token', result.login.token)
             setUser({ email:result.login.email, id:result.login.id })
-            window.location.href = 'http://localhost:3000/'
+            window.location.href = '/'
         },
         onError(err){
             setError(err.graphQLErrors[0]?.extensions.exception.error)
